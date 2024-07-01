@@ -1,0 +1,17 @@
+@import "../color.scss";
+
+.title-container {
+  display: flex;
+  -webkit-box-pack: justify;
+  width: inherit;
+  align-items: center;
+  height: 65px;
+  background-color: $header-background-color;
+  color: $font-color;
+  font-size: 30px;
+}
+
+.title-icon {
+  margin: 0 12px;
+  color: $icon-color;
+}

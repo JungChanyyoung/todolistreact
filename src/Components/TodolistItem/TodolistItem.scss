@@ -1,0 +1,17 @@
+@import "../color.scss";
+
+.todolist-container {
+  display: flex;
+  justify-content: space-between;
+  height: 65px;
+  border-bottom: 1px solid $icon-color;
+  align-items: center;
+  .icon {
+    font-size: 30px;
+    color: $icon-color;
+    margin: 0 12px;
+  }
+  .checkbox {
+    display: flex;
+  }
+}
