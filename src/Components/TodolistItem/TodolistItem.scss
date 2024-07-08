@@ -10,9 +10,14 @@
     font-size: 30px;
     color: $icon-color;
     margin: 0 12px;
+    cursor: pointer;
   }
   .checked {
     color: rgb(145, 208, 134);
+  }
+  .checked-text {
+    color: rgba(0, 0, 0, 0.19);
+    text-decoration: line-through;
   }
   .checkbox {
     display: flex;

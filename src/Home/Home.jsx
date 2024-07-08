@@ -28,7 +28,7 @@ function Home() {
     if (newTodo.trim() !== "") {
       // newTodo값이 빈 문자열이 아닌 경우
       // trim : 앞 뒤 공백 제거
-      setTodos([...todos, { text: newTodo }]); // todos 배열에 새로운 할 일 추가
+      setTodos([...todos, { text: newTodo, isChecked: false }]); // todos 배열에 새로운 할 일 추가
       setNewTodo(""); // 필드 입력값 초기화
     }
   };
@@ -117,6 +117,7 @@ function Home() {
                     maxLength="16"
                     value={todo.text}
                     readOnly
+                    className={todo.isChecked ? "checked-text" : ""}
                   />
                 )}
               </div>
@@ -128,18 +129,20 @@ function Home() {
                 </>
               ) : (
                 // 수정 중이 아닌 할 일 수정 및 삭제 버튼
-                <div>
-                  <FontAwesomeIcon
-                    icon={faPencil}
-                    className="icon"
-                    onClick={() => handleEditClick(index)}
-                  />
+                <>
+                  {!todo.isChecked && (
+                    <FontAwesomeIcon
+                      icon={faPencil}
+                      className="icon"
+                      onClick={() => handleEditClick(index)}
+                    />
+                  )}
                   <FontAwesomeIcon
                     icon={faTrashCan}
-                    className="icon"
+                    className={todo.isChecked ? "icon checked" : "icon"}
                     onClick={() => handleDeleteClick(index)}
                   />
-                </div>
+                </>
               )}
             </div>
           ))
